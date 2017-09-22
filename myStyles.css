@@ -1,0 +1,104 @@
+@charset "UTF-8";
+* {
+  /* "*" element is "everything"*/
+  /*border: 1px solid red;*/
+  margin: 0;
+  /*set margin and padding to 0 for entire file before changing it in elements*/
+  padding: 0;
+}
+
+@font-face {
+  font-family: grunge;
+  src: url(1942.ttf) format('truetype'), url(1942.woff) format('woff');
+}
+
+/*example of linking to a font file*/
+
+/*main styles*/
+
+body {
+  background-color: rgb(179, 179, 179);
+  /*use color picker to easily choose a color*/
+}
+
+p {
+  font-family: grunge, sans-serif;
+  /*adding a certain font linked in css page to an element*/
+  background-color: rgb(193, 118, 203);
+  font-size: 2em;
+  /*padding: 30px 50px; (example with top/bottom and left/right)*/
+  padding: 30px 20px 50px 0;
+  /*padding example above is example of using TRBL (top right bottom left)...same with margin*/
+  margin: 10px;
+}
+
+h1 {
+  font-family: Limelight, cursive;
+  /*above is example of using a google font, link in html file*/
+  background-color: rgb(237, 170, 90);
+  color: rgba(31, 49, 212, 0.86);
+  font-size: 3em;
+  /*1 em is the default font size chosen by a user agent (browser)*/
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+  /*just fun things to do to the type*/
+  padding: 20px;
+  margin: 30px;
+}
+
+/* nav styles*/
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul a {
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+nav ul li {
+  margin: 1em;
+}
+
+nav ul a:link, nav ul a:visited {
+  background-color: red;
+  color: black;
+}
+
+/*love hate::: link and visited together (LOVE) and hover and active together (HATE) */
+
+nav ul a:hover, nav ul a:active {
+  background-color: blue;
+  color: white;
+}
+
+
+/*use a dot to introduce a CLASS -- can use class as many times as you want*/
+.green {
+  background-color: green;
+}
+
+/*use a hashtag to introduce an ID -- can only use an ID once in a file*/
+#purple {
+  background-color: purple;
+}
+
+p:nth-of-type(3){
+  font-family: cursive;
+}
+/*another way to target a single occurrence of an element to stylize (this is styling the third paragraph)*/
+
+
+body p:first-child::before {
+  content: open-quote;
+  font-size: 2em;
+  font-family: serif;
+}
+body p:first-child::after {
+  content: close-quote;
+  font-size: 2em;
+  font-family: serif;
+}
+/*example of pseudo element...add decorative elements unimportant to content of page, but help with presentation...such as the open and close quotes*/
